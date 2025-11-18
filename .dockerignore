@@ -1,0 +1,85 @@
+# Python artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+env/
+ENV/
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Git
+.git/
+.gitignore
+
+# Logs and temporary files
+logs/
+*.log
+tmp/
+temp/
+
+# Development and documentation files
+imp notes.txt
+code-explained.txt
+README.md
+*.md
+
+# Generated/processed data files (these get created at runtime)
+data/processed_anime.csv
+
+# Database files (these get created at runtime)
+chroma_db/
+*.db
+*.sqlite
+
+# Environment files (should be set via Docker env vars)
+.env
+.env.local
+.env.production
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# Jupyter notebooks
+.ipynb_checkpoints/
+
+# Docker files
+Dockerfile*
+docker-compose*.yml
+.dockerignore
