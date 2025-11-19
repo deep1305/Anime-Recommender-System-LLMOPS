@@ -18,3 +18,28 @@ code-explained.txt
 main.py
 chroma_db/
 .vscode/
+
+
+# IDE files
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Jupyter notebooks
+.ipynb_checkpoints/
+
+# Testing
+.pytest_cache/
+.coverage
+
+# Temporary files
+*.log
+tmp/
+temp/
+
+
+*.docx
