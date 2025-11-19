@@ -1,4 +1,5 @@
-from langchain_community.chains.retrieval_qa.base import RetrievalQA
+from langchain.chains import create_retrieval_chain
+from langchain.chains.combine_documents import create_stuff_documents_chain
 from langchain_groq import ChatGroq
 from src.prompt_template import get_anime_prompt
 
@@ -7,19 +8,10 @@ class AnimeRecommender:
         self.llm = ChatGroq(api_key=api_key,model=model_name,temperature=0)
         self.prompt = get_anime_prompt()
 
-        self.qa_chain = RetrievalQA.from_chain_type(
-            llm = self.llm,
-            chain_type = "stuff",
-            retriever = retriever,
-            return_source_documents = True,
-            chain_type_kwargs = {"prompt":self.prompt}
-        )
+        # Create the question-answering chain using the new approach
+        question_answer_chain = create_stuff_documents_chain(self.llm, self.prompt)
+        self.qa_chain = create_retrieval_chain(retriever, question_answer_chain)
 
     def get_recommendation(self,query:str):
-        result = self.qa_chain({"query":query})
-        return result['result']
-        '''
-        The `RetrievalQA` chain is designed to accept either:
-          1. A dictionary with `"query"` key: `{"query": "your question"}`
-          2. Just a string: `"your question"`
-        '''
+        result = self.qa_chain.invoke({"input":query})
+        return result['answer']
