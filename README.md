@@ -47,7 +47,7 @@ AI Anime Recommender/
 
 1. **Clone the repository**
    ```bash
-   git clone <your-repo-url>
+   git clone https://github.com/deep1305/Anime-Recommender-System-LLMOPS.git
    cd "AI Anime Recommender"
    ```
 
